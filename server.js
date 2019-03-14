@@ -24,8 +24,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/statictweets/:search', function (req, res) {
-      console.log('Calling twitter feed service at: ' + 'http://twitter-feed:30000/statictweets/' + encodeURIComponent(req.params.search));
-      request('http://twitter-feed:30000/statictweets/' + encodeURIComponent(req.params.search), function (error, response, body) {
+      console.log('Calling twitter feed service at: ' + 'http://twitter-feed.kuzdowicz:30000/statictweets/' + encodeURIComponent(req.params.search));
+      request('http://twitter-feed.kuzdowicz:30000/statictweets/' + encodeURIComponent(req.params.search), function (error, response, body) {
         console.log('error:', error);
         console.log('statusCode:', response && response.statusCode);
         console.log('body:', body);
@@ -35,7 +35,7 @@ app.get('/statictweets/:search', function (req, res) {
 
 app.get('/color', function(req, res) {
   console.log('getting color from twitter feed');
-  request('http://twitter-feed:30000/statictweets/color', function (error, response, body) {
+  request('http://twitter-feed.kuzdowicz:30000/statictweets/color', function (error, response, body) {
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
     console.log('body:', body);
